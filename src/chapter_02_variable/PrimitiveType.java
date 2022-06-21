@@ -10,8 +10,9 @@ public class PrimitiveType {
  /*       long ln = 9223372036854775807; ERROR */
         long ln = 9223372036854775807L;
 /*        float flt = 3.4E38; ERROR */
-        float flt = 3.4E38F;
+        float flt = 3.4F;
         double db = 1.8E307;
+        float powerFloat = 21474878f;
 
 /*        System.out.println((int)b) ERROR */
         System.out.println((short)integer); // -1
@@ -23,6 +24,7 @@ public class PrimitiveType {
         System.out.println((char)integer); // ￿
         System.out.println((long)integer); // 2147483647
         System.out.println((int)db); // 2147483647
+        System.out.println("power " + powerFloat);
 
 
 
