@@ -1,10 +1,12 @@
 package chapter_02_variable;
 
 public class Encoding {
-    public static void main(String args[]) {
-        char hangle = '가';
+    static class Test{
 
-        System.out.println((int)hangle);
+    }
+    public static void main(String args[]) {
+        Test test;
+        System.out.println(test.a);
     }
 
 

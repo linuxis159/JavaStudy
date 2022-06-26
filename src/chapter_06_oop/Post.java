@@ -1,6 +1,5 @@
 package chapter_06_oop;
 
-import java.util.Date;
 
 public class Post {
     public static int postNum = 0;
@@ -12,4 +11,12 @@ public class Post {
     void modify(){
 
     }
+    public static void viewPostNum(){
+        System.out.println(postNum);
+        System.out.println(description);
+
+    }
+
+
+
 }
