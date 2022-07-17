@@ -13,6 +13,7 @@ public class ExceptionEx17_ReThrowing {
             throw new Exception();
         } catch (Exception e){
             System.out.println("method1메서드 에서 예외가 처리되었습니다");
+            // main함수로 예외 전파
             throw e;
         }
 
