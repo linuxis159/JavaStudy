@@ -40,7 +40,6 @@ public class Clone {
             this.mother = mother;
         }
 
-        //shallowDeep
         public People shallowCopy(){
             Object obj = null;
             try {
