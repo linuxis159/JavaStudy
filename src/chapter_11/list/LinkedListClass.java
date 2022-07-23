@@ -3,6 +3,7 @@ package chapter_11.list;
 import java.util.LinkedList;
 
 public class LinkedListClass<E> {
+
     private int size;
     Node<E> first;
     Node<E> last;
@@ -48,6 +49,17 @@ public class LinkedListClass<E> {
         return getNodeByIndex(index).e;
     }
 
+    public E get(E e){
+        return getNodeByRef(e).e;
+    }
+
+    public E getLast(){
+        return last.e;
+    }
+    public E getFirst(){
+        return first.e;
+    }
+
     public E remove(int index){
         checkListBound(index);
         Node<E> oldObj = getNodeByIndex(index);
@@ -56,12 +68,50 @@ public class LinkedListClass<E> {
         size--;
         return oldObj.e;
     }
+
+    public E remove(E e){
+
+        Node<E> oldObj = getNodeByRef(e);
+        E el = oldObj.e;
+        if(size == 1){
+            first = null;
+            last = null;
+            size--;
+        }
+        else if(oldObj == first) {
+            oldObj.next.previous = null;
+            first = oldObj.next;
+        }
+        else if(oldObj == last){
+            oldObj.previous.next = null;
+            last = oldObj.previous;
+        }
+        else{
+            oldObj.previous.next = oldObj.next;
+            oldObj.next.previous = oldObj.previous;
+        }
+        size--;
+        return el;
+    }
     private Node<E> getNodeByIndex(int index){
         Node<E> node = first;
         for(int i = 0; i < index; i++){
             node = node.next;
         }
         return node;
+    }
+    private Node<E> getNodeByRef(E e){
+        Node<E> node = first;
+        for(int i = 0; node.e.equals(e) == false; i++){
+            node = node.next;
+        }
+        if(!(node.e.equals(e))) {
+            System.out.println(node.e);
+            System.out.println(e);
+            throw new RuntimeException("불일치");
+        }
+        return node;
+
     }
 
 /*    public boolean remove(E e){
