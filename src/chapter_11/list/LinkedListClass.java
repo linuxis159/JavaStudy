@@ -15,14 +15,10 @@ public class LinkedListClass<E> {
             this.e = e;
         }
     }
-    public LinkedListClass(int size){
-        this.size = size;
-    }
 
 
-    public LinkedListClass(){
-        this(10);
-    }
+
+
     void checkListBound(int index){
         if(index < 0 || index >= size)
             throw new IndexOutOfBoundsException("범위를 벗어났습니다");
@@ -33,40 +29,42 @@ public class LinkedListClass<E> {
             first = newNode;
             first.next = null;
             first.previous = null;
+
             last = newNode;
             last.next = null;
             last.previous = null;
+            size++;
             return true;
         }
         last.next = newNode;
         newNode.previous = last;
         last = newNode;
-
+        size++;
         return true;
     }
 
     public E get(int index){
         checkListBound(index);
-        Node<E> node = first;
-        for(int i = 0; i < index; i++){
-            node = first.next;
-        }
-        return node.e;
+        return getNodeByIndex(index).e;
     }
 
     public E remove(int index){
-        E oldObj = null;
         checkListBound(index);
-        oldObj = (E)data[index];
-
-        if(index != size-1)
-            System.arraycopy(data, index+1, data, index, size-index-1);
-        data[size-1] = null;
+        Node<E> oldObj = getNodeByIndex(index);
+        oldObj.previous.next = oldObj.next;
+        oldObj.next.previous = oldObj.previous;
         size--;
-        return oldObj;
+        return oldObj.e;
+    }
+    private Node<E> getNodeByIndex(int index){
+        Node<E> node = first;
+        for(int i = 0; i < index; i++){
+            node = node.next;
+        }
+        return node;
     }
 
-    public boolean remove(E e){
+/*    public boolean remove(E e){
         for(int i=0; i<size; i++){
             if(e.equals(data[i])) {
                 remove(i);
@@ -90,5 +88,5 @@ public class LinkedListClass<E> {
 
     public boolean isEmpty(){ return size==0; }
     public int capacity() { return capacity; }
-    public int size() { return size; }
+    public int size() { return size; }*/
 }
