@@ -2,7 +2,7 @@ package chapter_11.list;
 
 import java.util.ArrayList;
 
-public class ArrayListClass<E> {
+public class ArrayListClass<E> implements ListClass<E>{
     Object data[] = null;
     int capacity = 0;
     int size = 0;
@@ -51,14 +51,14 @@ public class ArrayListClass<E> {
         return oldObj;
     }
 
-    public boolean remove(E e){
+    public E remove(E e){
+        E oldObj = null;
         for(int i=0; i<size; i++){
             if(e.equals(data[i])) {
-                remove(i);
-                return true;
+                oldObj = remove(i);
             }
         }
-        return false;
+        return oldObj;
     }
 
     public void trimToSize(){

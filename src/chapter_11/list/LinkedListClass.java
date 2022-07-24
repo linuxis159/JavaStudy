@@ -2,7 +2,7 @@ package chapter_11.list;
 
 import java.util.LinkedList;
 
-public class LinkedListClass<E> {
+public class LinkedListClass<E> implements ListClass<E>{
 
     private int size;
     Node<E> first;
