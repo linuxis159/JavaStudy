@@ -1,8 +1,6 @@
-package chapter_12.annotation;
+package chapter_12.annotation.spring;
 
-import chapter_12.annotation.annotation.Component;
-import chapter_12.annotation.annotation.Controller;
-import chapter_12.annotation.annotation.Service;
+import chapter_12.annotation.spring.annotation.Service;
 
 import java.lang.annotation.Annotation;
 

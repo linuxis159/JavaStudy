@@ -1,20 +1,15 @@
-@Target
-    어노테이션 지정가능한 대상 지정
+@Target : 어노테이션 지정가능한 대상 지정
         TYPE (Class, Interface, Enum)
         FIELD(맴버변수, enum상수)
         METHOD
         PARAMETER(매개변수)
         CONSTRUCTOR
         LOCAL_VARIABLE
-@Documented
-    어노테이션에 대한 정보가 javadoc로 작성한 문소에 포함되도록함
-@Inherited
-    어노테이션이 자손클래스에 상속되도록
-@Retention
-    어노테이션 유지기간
+@Documented : 어노테이션에 대한 정보가 javadoc로 작성한 문소에 포함되도록함
+@Inherited : 어노테이션이 자손클래스에 상속되도록
+@Retention : 어노테이션 유지기간
        SOURCE -> 소스파일에만 존재, 클래스파일에는 존재하지 않음, (컴파일 시점에서는 존재하지만 컴파일 후 CLASS파일에서는 사라지는 듯)
        CLASS -> 클래스 파일에 존재, 실행시에 사용불가, 기본값
        RUNTIME -> 클래스 파일에 존재, 실행시에 사용가능
 
-@Repetable
-    대상하나에 같은 어노테이션 여러번 작성가능
+@Repetable : 대상하나에 같은 어노테이션 여러번 작성가능
