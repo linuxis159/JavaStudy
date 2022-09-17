@@ -6,6 +6,7 @@ public class ClassForSerialization implements Serializable {
     String name;
     String age;
 
+
      transient NonImplementSerializeableClass nonImplementSerializeableClass = new NonImplementSerializeableClass();
     ImplementSerializeableClass ImplementSerializeableClass = new ImplementSerializeableClass();
 

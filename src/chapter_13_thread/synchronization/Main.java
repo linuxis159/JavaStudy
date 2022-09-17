@@ -11,8 +11,13 @@ public class Main {
 
         Thread t3 = new Thread(safetyThread);
         Thread t4 = new Thread(safetyThread);
-        t3.start();
-        t4.start();
+        //쓰레드 동기화 X
+        t1.start();
+        t2.start();
+
+        //쓰레드 동기화 O
+        //t3.start();
+        //t4.start();
 
 
         try{
