@@ -6,9 +6,9 @@ package chapter_13_thread.create;
 public class Main {
 
     public static void main(String[] args){
-        // Thread 클래스 상속
+        // ExtendsThread 클래스는 Extends를 상속하고있다
         ExtendsThread t1 = new ExtendsThread();
-        //Runnable 인터페이스 구현
+        //ImplementRunaalbe 클래스는 Runnable 인터페이스를 구현하고 있다
         Runnable runnable = new ImplementRunnable();
         Thread t2 = new Thread(runnable);
         //t1을 위한 스택공간 생성
