@@ -6,7 +6,8 @@ public class SafetyThread implements Runnable{
 
     @Override
     public void run() {
-        for (int i = 1; i <= 1000000; i++){
+        for (int i = 1; i <= 100000; i++){
+            System.out.println("Current SafetyThread : "+ Thread.currentThread().getName() + ", i : "+ i);
             synchronizedCriticalSection.increase();
         }
         System.out.println(synchronizedCriticalSection.total);

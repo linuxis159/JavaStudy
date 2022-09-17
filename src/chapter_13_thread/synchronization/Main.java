@@ -11,11 +11,10 @@ public class Main {
 
         Thread t3 = new Thread(safetyThread);
         Thread t4 = new Thread(safetyThread);
-        t1.start();
-        t2.start();
-
         t3.start();
         t4.start();
+
+
         try{
             // threadOne 종료될때 까지 메인쓰레드 즁지
             t1.join();

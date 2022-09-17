@@ -4,7 +4,7 @@ import java.io.*;
 
 public class CharBasedStream {
     public static void main(String[] args) throws IOException {
-        String text = "1234하늘하늘かいしゃやめたい";
+        String text = "1234하늘하늘あいうえお";
         FileOutputStream out = new FileOutputStream("test.txt");
         out.write(text.getBytes());
         FileReader in = new FileReader("test.txt");
